@@ -75,6 +75,8 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import cyanogenmod.providers.CMSettings;
+
 public abstract class BaseNavigationBar extends LinearLayout implements Navigator, PulseObserver {
     final static String TAG = "PhoneStatusBar/BaseNavigationBar";
     public final static boolean DEBUG = false;
@@ -338,8 +340,8 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
 
         // PhoneStatusBar doesn't set this when user inflates a bar, only when
         // actual value changes #common_cm
-        mLeftInLandscape = Settings.System.getIntForUser(resolver,
-                Settings.System.NAVBAR_LEFT_IN_LANDSCAPE, 0, UserHandle.USER_CURRENT) == 1;
+        mLeftInLandscape = CMSettings.System.getIntForUser(resolver,
+                CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE, 0, UserHandle.USER_CURRENT) == 1;
         // we boot with screen off, but we need to force it true here
         mScreenOn = true;
         if (mPulse != null) {
