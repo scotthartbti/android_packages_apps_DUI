@@ -41,8 +41,8 @@ import android.widget.Toast;
 
 public abstract class BaseEditor implements Editor {
     public static final String INTENT_ACTION_EDIT_CLASS = "com.android.settings";
-    public static final String INTENT_ACTION_EDIT_COMPONENT = "com.android.settings.aicp.ActionPickerDialogActivity";
-    public static final String INTENT_ACTION_ICON_PICKER_COMPONENT = "com.android.settings.aicp.IconPickerActivity";
+    public static final String INTENT_ACTION_EDIT_COMPONENT = "com.android.settings.cyanogenmod.ActionPickerDialogActivity";
+    public static final String INTENT_ACTION_ICON_PICKER_COMPONENT = "com.android.settings.cyanogenmod.IconPickerActivity";
     public static final String INTENT_ICON_PICKER = "intent_icon_picker";
     public static final String INTENT_ACTION_PICKER = "intent_action_action_picker";
     public static final String INTENT_NAVBAR_EDIT = "intent_navbar_edit";
