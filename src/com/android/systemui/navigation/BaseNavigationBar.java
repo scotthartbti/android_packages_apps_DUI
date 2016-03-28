@@ -90,6 +90,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
 
     public static final int MSG_SET_DISABLED_FLAGS = 101;
     public static final int MSG_INVALIDATE = 102;
+    public static boolean sIsTablet;
 
     private boolean mKeyguardShowing;
 
@@ -106,7 +107,6 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
     protected boolean mLayoutTransitionsEnabled;
     protected boolean mWakeAndUnlocking;
     protected boolean mScreenPinningEnabled;
-    protected final boolean mIsTablet;
     protected OnVerticalChangedListener mOnVerticalChangedListener;
     protected SmartObserver mSmartObserver;
     protected PulseController mPulse;
@@ -160,7 +160,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
                 Context.WINDOW_SERVICE)).getDefaultDisplay();
         mSmartObserver = new SmartObserver(mHandler, context.getContentResolver());
         mSpringSystem = SpringSystem.create();
-        mIsTablet = !DUActionUtils.isNormalScreen();
+        sIsTablet = !DUActionUtils.navigationBarCanMove();
         mVertical = false;
     }
 
@@ -175,7 +175,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
     public void abortCurrentGesture(){}
 
     public void setMenuVisibility(final boolean show) {}
-    public void setMenuVisibility(final boolean show, final boolean force) {}
+    public void setMenuVisibility(final boolean show, final boolean force) {} 
     public void setNavigationIconHints(int hints) {}
     public void setNavigationIconHints(int hints, boolean force) {}
     public void onHandlePackageChanged(){}
@@ -481,7 +481,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
         LinearLayout rot90NavButton = new LinearLayout(getContext());
         rot90NavButton.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
-        rot90NavButton.setOrientation(mIsTablet ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+        rot90NavButton.setOrientation(sIsTablet ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
         rot90NavButton.setClipChildren(false);
         rot90NavButton.setClipToPadding(false);
         rot90NavButton.setLayoutTransition(new LayoutTransition());
@@ -497,7 +497,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
         LinearLayout rot90LightsOut = new LinearLayout(getContext());
         rot90LightsOut.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
-        rot90LightsOut.setOrientation(mIsTablet ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+        rot90LightsOut.setOrientation(sIsTablet ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
         rot0LightsOut.setVisibility(View.GONE);
         rot90LightsOut.setTag(Res.Common.LIGHTS_OUT);
 
