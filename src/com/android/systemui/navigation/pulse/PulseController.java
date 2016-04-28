@@ -188,6 +188,9 @@ public class PulseController {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_EMPTY_BLOCK_SIZE),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_CUSTOM_FUDGE_FACTOR),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -203,7 +206,9 @@ public class PulseController {
             resetvisualizer(); 
             }  else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_EMPTY_BLOCK_SIZE))) {     
             resetvisualizer(); 
-            }  else {
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_CUSTOM_FUDGE_FACTOR))) {     
+            resetvisualizer(); 
+            } else {
                 update();
             }
         }

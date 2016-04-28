@@ -98,6 +98,10 @@
          it creates higher highs that fall faster. Sane values
          are from 2 to 5 -->
     <integer name="config_pulseDbFuzzFactor">4</integer>
+    <integer name="config_pulseDbFuzzFactor1">2</integer>
+    <integer name="config_pulseDbFuzzFactor2">3</integer>
+    <integer name="config_pulseDbFuzzFactor3">5</integer>
+    <integer name="config_pulseDbFuzzFactor4">6</integer>
 
     <!-- DbFuzz adds it's value in pixels to the magnitude
          It is recommended to set this value so that it is
