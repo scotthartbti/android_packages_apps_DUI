@@ -179,6 +179,9 @@ public class PulseController {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_CUSTOM_DIMEN),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_CUSTOM_DIV),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -187,6 +190,8 @@ public class PulseController {
                 updateEnabled();
                 doLinkage();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_CUSTOM_DIMEN))) {     
+            resetvisualizer(); 
+            }  else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_CUSTOM_DIV))) {     
             resetvisualizer(); 
             } else {
                 update();
