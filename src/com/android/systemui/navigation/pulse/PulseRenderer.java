@@ -175,5 +175,29 @@ public class PulseRenderer implements Renderer {
 	else if (mCustomDimen == 11) {
 	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth11));
 	}
+	else if (mCustomDimen == 12) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth12));
+	}
+	else if (mCustomDimen == 13) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth13));
+	}
+	else if (mCustomDimen == 14) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth14));
+	}
+	else if (mCustomDimen == 15) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth15));
+	}
+	else if (mCustomDimen == 16) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth16));
+	}
+	else if (mCustomDimen == 17) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth17));
+	}
+	else if (mCustomDimen == 18) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth18));
+	}
+	else if (mCustomDimen == 19) {
+	mPaint.setStrokeWidth(ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathStrokeWidth19));
+	}
     }
 }
