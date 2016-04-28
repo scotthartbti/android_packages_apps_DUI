@@ -182,6 +182,12 @@ public class PulseController {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_CUSTOM_DIV),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_FILLED_BLOCK_SIZE),
+                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.PULSE_EMPTY_BLOCK_SIZE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -193,7 +199,11 @@ public class PulseController {
             resetvisualizer(); 
             }  else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_CUSTOM_DIV))) {     
             resetvisualizer(); 
-            } else {
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_FILLED_BLOCK_SIZE))) {     
+            resetvisualizer(); 
+            }  else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_EMPTY_BLOCK_SIZE))) {     
+            resetvisualizer(); 
+            }  else {
                 update();
             }
         }

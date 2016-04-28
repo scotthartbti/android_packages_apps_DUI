@@ -53,6 +53,8 @@ public class PulseRenderer implements Renderer {
     private int mPathEffect2;
     private int mCustomDimen;
     private int mNumDivision;
+    private int mFilledBlock;
+    private int mEmptyBlock;
     private Paint mPaint;
     private StreamValidator mValidator;
 
@@ -63,8 +65,7 @@ public class PulseRenderer implements Renderer {
         mDefColor = ctx.getResources().getColor(R.color.config_pulseFillColor);
         mDbFuzzFactor = ctx.getResources().getInteger(R.integer.config_pulseDbFuzzFactor);
         mDbFuzz = ctx.getResources().getInteger(R.integer.config_pulseDbFuzz);
-        mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect_1);
-        mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect_2);
+        getpatheffect(ctx);
         mUserColor = mDefColor;
         mPaint = new Paint();
 	updatedimens(ctx);
@@ -134,6 +135,45 @@ public class PulseRenderer implements Renderer {
     @Override
     public void onStopAnimation(ColorAnimator colorAnimator, int lastColor) {
         setColor(mUserColor, true);
+    }
+    
+    public void getpatheffect(Context ctx) {   
+        mFilledBlock = Settings.System.getIntForUser(
+		ctx.getContentResolver(), Settings.System.PULSE_FILLED_BLOCK_SIZE, 0,
+		UserHandle.USER_CURRENT);
+	mEmptyBlock = Settings.System.getIntForUser(
+		ctx.getContentResolver(), Settings.System.PULSE_EMPTY_BLOCK_SIZE, 0,
+		UserHandle.USER_CURRENT);
+        if (mFilledBlock == 0) {
+	mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect_1);
+	} 
+	else if (mFilledBlock == 1) {
+	mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect1_1);
+	} 
+	else if (mFilledBlock == 2) {
+	mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect2_1);
+	}
+	else if (mFilledBlock == 3) {
+	mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect3_1);
+	}
+	else if (mFilledBlock == 4) {
+	mPathEffect1 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect4_1);
+	}
+	if (mEmptyBlock  == 0) {
+	mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect_2);
+	}
+	else if (mEmptyBlock == 1) {
+	mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect1_2);
+	}
+	else if (mEmptyBlock  == 2) {
+	mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect2_2);
+	}
+	else if (mEmptyBlock  == 3) {
+	mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect3_2);
+	}  
+	else if (mEmptyBlock  == 4) {
+	mPathEffect2 = ctx.getResources().getDimensionPixelSize(R.dimen.config_pulsePathEffect4_2);
+	}  
     }
     
     public void updatedimens(Context ctx) {
