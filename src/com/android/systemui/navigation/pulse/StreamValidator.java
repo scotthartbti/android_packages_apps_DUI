@@ -16,19 +16,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Definition of a renderer. Currently unused, may need to be expanded
+ * Definition of a stream validator (unused). Might be useful for waveform
+ * validation?
  *
  */
 
 package com.android.systemui.navigation.pulse;
 
-import com.android.systemui.navigation.utils.ColorAnimatable.ColorAnimationListener;
+public interface StreamValidator {
+    public void analyze(byte[] data);
+    public boolean isValidStream();
+    public void reset();
+    public void addCallbacks(Callbacks callbacks);
+    public void removeCallbacks(Callbacks callbacks);
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-
-// TODO: This should probably just be an abstract class
-public interface Renderer extends ColorAnimationListener {
-    public void render(Canvas canvas, byte[] bytes, Rect rect);
-    public void setColor(int color, boolean fromAnimator);
+    public interface Callbacks {
+        public void onStreamAnalyzed(boolean isValid);
+    }
 }
