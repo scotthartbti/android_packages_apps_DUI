@@ -386,7 +386,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
     public final void dispose() {
         mSmartObserver.cleanUp();
         if (mPulse != null) {
-            mPulse.removePulseObserver();
+            mPulse.doUnlinkVisualizer();
         }
         flushSpringSystem();
         onDispose();
@@ -582,8 +582,10 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
             reorient();
             notifyVerticalChangedListener(newVertical);
         }
-
         postCheckForInvalidLayout("sizeChanged");
+        if (mPulse != null) {
+            mPulse.onSizeChanged(w, h, oldw, oldh);
+        }
         super.onSizeChanged(w, h, oldw, oldh);
     }
 
