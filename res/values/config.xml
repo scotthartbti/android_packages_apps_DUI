@@ -93,14 +93,14 @@
          This is the amount of frequency distribution
          each bar gets. MUST BE POWER OF 2. Recommended
          leave as is -->
-    <integer name="config_pulseDivisions">8</integer>
+    <integer name="config_pulseDivisions">16</integer>
     <integer name="config_pulseDivisions1">2</integer>
     <integer name="config_pulseDivisions2">4</integer>
     <integer name="config_pulseDivisions3">6</integer>
-    <integer name="config_pulseDivisions4">10</integer>
-    <integer name="config_pulseDivisions5">12</integer>
-    <integer name="config_pulseDivisions6">14</integer>
-    <integer name="config_pulseDivisions7">16</integer>
+    <integer name="config_pulseDivisions4">8</integer>
+    <integer name="config_pulseDivisions5">10</integer>
+    <integer name="config_pulseDivisions6">12</integer>
+    <integer name="config_pulseDivisions7">14</integer>
     <integer name="config_pulseDivisions8">18</integer>
     <integer name="config_pulseDivisions9">20</integer>
     <integer name="config_pulseDivisions10">22</integer>
