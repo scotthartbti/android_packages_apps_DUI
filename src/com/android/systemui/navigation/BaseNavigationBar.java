@@ -2,7 +2,7 @@
  * Copyright (C) 2008 The Android Open Source Project
  * Copyright (C) 2014 The TeamEos Project
  * Copyright (C) 2016 The DirtyUnicorns Project
- * 
+ *
  * @author: Randall Rushing <randall.rushing@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * Base navigation bar abstraction for managing keyguard policy, internal
  * bar behavior, and everything else not feature implementation specific
- * 
+ *
  */
 
 package com.android.systemui.navigation;
@@ -64,6 +64,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
+import cyanogenmod.providers.CMSettings;
 
 public abstract class BaseNavigationBar extends LinearLayout implements Navigator, PulseObserver {
     final static String TAG = "PhoneStatusBar/BaseNavigationBar";
@@ -166,7 +168,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
     public void abortCurrentGesture(){}
 
     public void setMenuVisibility(final boolean show) {}
-    public void setMenuVisibility(final boolean show, final boolean force) {} 
+    public void setMenuVisibility(final boolean show, final boolean force) {}
     public void setNavigationIconHints(int hints) {}
     public void setNavigationIconHints(int hints, boolean force) {}
     public void onHandlePackageChanged(){}
@@ -331,8 +333,8 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
 
         // PhoneStatusBar doesn't set this when user inflates a bar, only when
         // actual value changes #common_cm
-//        mLeftInLandscape = Settings.System.getIntForUser(resolver,
-//                Settings.System.NAVBAR_LEFT_IN_LANDSCAPE, 0, UserHandle.USER_CURRENT) == 1;
+//        mLeftInLandscape = CMSettings.System.getIntForUser(resolver,
+//                CMSettings.System.NAVBAR_LEFT_IN_LANDSCAPE, 0, UserHandle.USER_CURRENT) == 1;
         // we boot with screen off, but we need to force it true here
         mScreenOn = true;
         if (mPulse != null) {
@@ -423,7 +425,7 @@ public abstract class BaseNavigationBar extends LinearLayout implements Navigato
 
         if (DEBUG) {
             Log.d(TAG, "reorient(): rot=" + mDisplay.getRotation());
-        }      
+        }
     }
 
     @Override
