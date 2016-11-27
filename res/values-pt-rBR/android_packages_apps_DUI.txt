@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2014-2015 The Dirty Unicorns Project
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Etiquetas de ação vinculáveis -->
+    <string name="label_action_no_action">Nenhuma ação</string>
+    <string name="label_action_settings_panel">Painel Configurações</string>
+    <string name="label_action_notification_panel">Painel de notificação</string>
+    <string name="label_action_screenshot">Captura de tela</string>
+    <string name="label_action_screenrecord">Gravação de tela</string>
+    <string name="label_action_expanded_desktop">Área dee trabalho expandida</string>
+    <string name="label_action_screen_off">Desligar a tela</string>
+    <string name="label_action_force_close_app">Forçar fechamento do aplicativo</string>
+    <string name="label_action_search_assistant">Assistente de pesquisa</string>
+    <string name="label_action_google_now_on_tap">Google Now On Tap</string>
+    <string name="label_action_voice_search">Pesquisa por voz</string>
+    <string name="label_action_in_app_search">Pesquisa n aplicativo</string>
+    <string name="label_action_flashlight">Lanterna</string>
+    <string name="label_action_bluetooth">Bluetooth</string>
+    <string name="label_action_wifi">WiFi</string>
+    <string name="label_action_hotspot">Ponto de acesso</string>
+    <string name="label_action_last_app">Último aplicativo</string>
+    <string name="label_action_overview">Recentes</string>
+    <string name="label_action_power_menu">Menu de energia</string>
+    <string name="label_action_menu">Menu</string>
+    <string name="label_action_back">Voltar</string>
+    <string name="label_action_home">Inicio</string>
+    <string name="label_action_ime_switcher">Mudar IME</string>
+    <string name="label_action_stop_screenpinning">Parar a fixação da tela</string>
+    <string name="label_action_ime_down">Método de introdução do cursor para baixo</string>
+    <string name="label_action_ime_left">Método do cursor de introdução à esquerda</string>
+    <string name="label_action_ime_right">Método de entrada do cursor à direita</string>
+    <string name="label_action_ime_up">Método de introdução do cursor para cima</string>
+    <string name="label_action_volume_panel">Paínel de volume</string>
+    <string name="label_action_clear_notifications">Limpar notificações</string>
+    <string name="label_action_editing_smartbar">Editor da barra inteligente</string>
+    <string name="label_action_split_screen">Tela dividida</string>
+
+    <!-- Barra inteligente -->
+    <string name="label_smartbar_actions">Ações</string>
+    <string name="label_smartbar_icon">Icones</string>
+    <string name="label_smartbar_add">Adicionar</string>
+    <string name="label_smartbar_remove">Remover</string>
+    <string name="label_smartbar_cancel">Cancelar</string>
+    <string name="label_smartbar_finish">Finalizar</string>
+    <string name="label_smartbar_single_tap">Toque único</string>
+    <string name="label_smartbar_double_tap">Toque duplo</string>
+    <string name="label_smartbar_long_press">Pressionar logamente</string>
+    <string name="label_smartbar_icon_pack">Pacote de icones</string>
+    <string name="label_smartbar_icon_gallery">Galeria</string>
+    <string name="label_smartbar_icon_color">Cor</string>
+    <string name="label_smartbar_icon_reset">Redefinir</string>
+    <string name="smartbar_editor_toast_starting">Iniciando o editor de navegação</string>
+    <string name="smartbar_editor_toast_stopping">Parando o editor de navegação</string>
+    <string name="smartbar_editor_toast_unavailable">Editor de navegação indisponível</string>
+    <string name="edit_mode">Modo de edição</string>
+
+    <!-- Mensagem de aplicativo morto -->
+    <string name="app_killed_message">%s morreu</string>
+
+</resources>
