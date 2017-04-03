@@ -248,6 +248,7 @@ public class SmartBarView extends BaseNavigationBar {
         mMusicStreamMuted = isMusicMuted(AudioManager.STREAM_MUSIC);
         IntentFilter filter = new IntentFilter();
         filter.addAction(AudioManager.STREAM_MUTE_CHANGED_ACTION);
+        filter.addAction(AudioManager.VOLUME_CHANGED_ACTION);
         context.registerReceiver(mReceiver, filter);
 
         mMediaMonitor = new MediaMonitor(context) {
@@ -256,6 +257,10 @@ public class SmartBarView extends BaseNavigationBar {
                 if (mImeHintMode == 3) {
                     setNavigationIconHints(mNavigationIconHints, true);
                 }
+            }
+            @Override
+            public void areMetadataChanged() {
+                setNavigationIconHints(mNavigationIconHints, true);
             }
         };
         mMediaMonitor.setListening(true);
